@@ -1,0 +1,44 @@
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.produk {
+  overflow: hidden;
+  padding: 3rem 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.produk:before,
+.produk:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.produk:hover .produk-slide {
+  animation-play-state: paused;
+}
+
+.produk-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.produk-slide img {
+  height: 10rem;
+  margin: 0 40px;
+}
